@@ -1,0 +1,57 @@
+nav ul li {
+  list-style-type: none;
+  list-style-position: inside;
+  color: dimgray;
+  display: inline-block;
+  width: 20%;
+  position: relative;
+}
+
+nav ul li a {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2rem;
+  font-family: calibri, sans-serif;
+  line-height: 5rem;
+  text-decoration: none;
+  color: hotpink;
+  margin-left: 4rem;
+}
+
+nav ul li a:hover {
+  background-color: pink;
+}
+
+ul {
+  font-size: 0;
+  background-color: paleturquoise;
+  list-style: none;
+  padding: 5px;
+}
+
+ul ul {
+  position: absolute;
+  display: none;
+}
+
+ul ul li {
+  display: block;
+}
+
+ul li:hover ul {
+  display: block;
+}
+
+a {
+  color: blanchedalmond;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+a:hover {
+  color: whitesmoke;
+}
+
+a.activa {
+  text-decoration: underline;
+}
