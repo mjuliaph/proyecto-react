@@ -1,4 +1,6 @@
 .piePagina {
+  background-color: var(--colorBordo2);
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

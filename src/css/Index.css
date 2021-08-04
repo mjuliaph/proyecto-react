@@ -1,0 +1,18 @@
+@import "./NavBar.css";
+@import "./Main.css";
+@import "./Footer.css";
+
+:root {
+  --colorDorado: #ed9d18;
+  --colorBordo2: #74091e;
+}
+
+.card {
+  max-width: 20rem;
+}
+
+.fa-shopping-cart {
+  margin-right: 1em;
+  color: var(--colorDorado);
+  font-size: 35px;
+}
