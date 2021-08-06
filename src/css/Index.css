@@ -1,6 +1,6 @@
-@import "./NavBar.css";
-@import "./Main.css";
-@import "./Footer.css";
+@import "./navBar.css";
+@import "./main.css";
+@import "./footer.css";
 
 :root {
   --colorDorado: #ed9d18;

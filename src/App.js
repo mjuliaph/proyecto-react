@@ -5,6 +5,7 @@ import Footer from "./components/Footer.jsx";
 import ItemListContainer from "./components/ItemListContainer.jsx";
 
 
+
 // Esto es lo que se muestra en el navegador
 function App() {
   return (

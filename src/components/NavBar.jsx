@@ -1,5 +1,6 @@
-import "../css/Index.css"
-import CartWidget from "./CartWidget";
+import "./../css/index.css"
+import CartWidget from "./CartWidget"
+import logo from "./../media/logo.png"
 
 function NavBar() {
 
@@ -7,7 +8,7 @@ function NavBar() {
         <div>
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="../../public/index.html"><img src="../media/logo.png" alt="logo teatro" /></a>
+                    <a class="navbar-brand" href="./../../public/index.html"><img src={logo} alt="logo teatro" /></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

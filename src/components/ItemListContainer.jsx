@@ -1,4 +1,4 @@
-import "../css/Index.css"
+import "../css/index.css"
 
 function ItemListContainer(props) {
     return (
