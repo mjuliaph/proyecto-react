@@ -1,0 +1,34 @@
+.botoneraCompra {
+  height: 100%;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.botoneraCompra h4 {
+  font-size: 1rem;
+  color: white;
+}
+.botoneraCompra p {
+  font-size: 1rem;
+}
+
+.botonesCompra {
+  width: 100%;
+  margin: 1em 0;
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.botonesCompra button {
+  width: 60px;
+  height: 30px;
+  color: var(--colorDorado);
+  background-color: var(--colorBordo2);
+  border: 1px solid var(--colorDorado);
+  border-radius: 5%;
+}

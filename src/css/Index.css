@@ -1,6 +1,7 @@
 @import "./navBar.css";
 @import "./main.css";
 @import "./footer.css";
+@import "./itemCount.css";
 
 :root {
   --colorDorado: #ed9d18;
@@ -15,4 +16,14 @@
   margin-right: 1em;
   color: var(--colorDorado);
   font-size: 35px;
+}
+
+.lista {
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  font-size: 0.75rem;
+  text-align: end;
+  background-color: var(--colorBordo2);
+  color: var(--colorDorado);
 }

@@ -1,4 +1,5 @@
 .piePagina {
+  height: 50px;
   background-color: var(--colorBordo2);
   color: white;
   display: flex;
