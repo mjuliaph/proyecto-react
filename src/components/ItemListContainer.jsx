@@ -1,11 +1,11 @@
-import "../css/index.css";
+// import ItemList from "./ItemList";
 
-function ItemListContainer(props) {
-  return (
-    <div className="container-fluid lista">
-      <p>{props.greeting}</p>
-    </div>
-  );
-}
+// function ItemListContainer(props) {
+//   return (
+//     <div className="container-fluid lista">
+//       <ItemList />
+//     </div>
+//   );
+// }
 
-export default ItemListContainer;
+// export default ItemListContainer;

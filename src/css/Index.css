@@ -27,3 +27,8 @@
   background-color: var(--colorBordo2);
   color: var(--colorDorado);
 }
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}

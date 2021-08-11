@@ -1,4 +1,4 @@
-import ItemCount from "./ItemCount";
+import ItemList from "./ItemList";
 // import teatro from "./../media/teatro.jpg";
 // import ballet from "./../media/ballet.jpg";
 // import opera from "./../media/opera.jpg";
@@ -9,23 +9,14 @@ function Main() {
   return (
     <div className="container-fluid">
       <div className="row portadas">
-        <div className="portadaTeatro">
-          {/* <img src={teatro} alt="" /> */}
-          <ItemCount stock={5} initial={0} />
-        </div>
-        <div className="portadaBallet">
-          {/* <img src={ballet} alt="" /> */}
-          <ItemCount stock={5} initial={0} />
-        </div>
-        <div className="portadaOpera">
-          {/* <img src={opera} alt="" /> */}
-          <ItemCount stock={5} initial={0} />
-        </div>
+        <div className="portadaTeatro">{/* <img src={teatro} alt="" /> */}</div>
+        <div className="portadaBallet">{/* <img src={ballet} alt="" /> */}</div>
+        <div className="portadaOpera">{/* <img src={opera} alt="" /> */}</div>
         <div className="portadaConcierto">
           {/* <img src={concierto} alt="" /> */}
-          <ItemCount stock={5} initial={0} />
         </div>
       </div>
+      <ItemList />
     </div>
   );
 }
