@@ -1,4 +1,4 @@
-import "../css/index.css"
+import "../style/index.css"
 
 // funcion para el icono del carrito de compras
 function CartWidget() {

@@ -1,4 +1,4 @@
-import "./../css/index.css";
+import "./../style/index.css";
 import CartWidget from "./CartWidget";
 import logo from "./../media/logo.png";
 

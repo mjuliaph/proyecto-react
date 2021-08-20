@@ -1,15 +1,17 @@
 import ItemCount from "./ItemCount";
+import { Link } from 'react-router-dom';
 import sillon from "./../media/sillon.png";
 
-function Item(props) {
+function Item({id, fila, numero, description, price}) {
   return (
     <div className="card" style={{ width: "18rem" }}>
       <img src={sillon} className="card-img-top" alt="butaca" />
       <div className="card-body">
-        <h4 className="card-title">{props.fila}</h4>
-        <p className="card-text">{props.description}</p>
-        <h5 className="card-title">{props.price}</h5>
-        <ItemCount stock={5} initial={0} />
+        <h4 className="card-title">{fila}{numero}</h4>
+        <p className="card-text">{description}</p>
+        <h5 className="card-title">{price}</h5>
+        <ItemCount stock={1} initial={0} />
+        <Link to={`/item/${id}`}>ir al detalle</Link>
       </div>
     </div>
   );

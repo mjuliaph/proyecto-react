@@ -3,7 +3,7 @@ import ItemList from "./ItemList";
 // import ballet from "./../media/ballet.jpg";
 // import opera from "./../media/opera.jpg";
 // import concierto from "./../media/concierto.jpg";
-import "./../css/index.css";
+import "./../style/index.css";
 
 function Main() {
   return (
