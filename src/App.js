@@ -9,26 +9,20 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 // Esto es lo que se muestra en el navegador
 function App() {
   return (
-    <div className="">
-      <header className="">
-        <BrowserRouter>
-        <NavBar />
-        <Switch>
-          <Route exact path="/">
-            <ItemListContainer />
-          </Route>
-          <Route exact path="/item/:id">
-            <ItemDetailContainer />
-          </Route>
-        </Switch>
-        </BrowserRouter>
-      </header>
 
-      <Main />
-      <ItemListContainer/>
-
-      <Footer />
-    </div>
+  <BrowserRouter>
+    <NavBar />
+    <Main/>
+    <Switch>
+      <Route exact path="/">
+        <ItemListContainer />
+      </Route>
+      <Route exact path="/item/:id">
+        <ItemDetailContainer />
+      </Route>
+    </Switch>
+    <Footer/>
+  </BrowserRouter>
   );
 }
 

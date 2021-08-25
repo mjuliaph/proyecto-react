@@ -1,12 +1,12 @@
-import Item from "./item";
+import Item from "./Item";
 
 function ItemList({ butacas }) {
   return (
-    <div>
+    <>
       {butacas.map((item) => (
         <Item {...item} />
       ))}
-    </div>
+    </>
   );
 }
 

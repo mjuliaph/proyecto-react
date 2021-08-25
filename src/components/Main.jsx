@@ -1,4 +1,3 @@
-import ItemList from "./ItemList";
 // import teatro from "./../media/teatro.jpg";
 // import ballet from "./../media/ballet.jpg";
 // import opera from "./../media/opera.jpg";
@@ -16,7 +15,6 @@ function Main() {
           {/* <img src={concierto} alt="" /> */}
         </div>
       </div>
-      <ItemList />
     </div>
   );
 }

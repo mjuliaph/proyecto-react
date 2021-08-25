@@ -6,10 +6,18 @@
 :root {
   --colorDorado: #ed9d18;
   --colorBordo2: #74091e;
+  width: 100%;
 }
 
 .card {
-  max-width: 20rem;
+  min-width: 7em;
+  min-height: 5em;
+  font-size: 1rem;
+}
+
+.card-title {
+  font-size: 1em;
+  font-style: bold;
 }
 
 .fa-shopping-cart {
@@ -29,6 +37,14 @@
 }
 
 .flex {
+  width: inherit;
   display: flex;
+  flex-flow: wrap;
+}
+
+.itemListContainer {
+  margin-top: 2em;
+  display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
 }

@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import ItemList from './ItemList';
-import { butacas } from "./ProductsJSON";
+import { butacas } from "./ProductsJson";
 
 
 function ItemListContainer() {
@@ -24,14 +24,9 @@ function ItemListContainer() {
 
     return (
         <>
-        <div className="itemListContainer">
-            {products.map((data) => {
-            return( 
-            <ItemList 
-            description={data.description} 
-            price={data.price} />)}) }
-        </div>
-
+            <div className="itemListContainer">
+                <ItemList butacas={products} />
+            </div>
         </>
     )
 }
