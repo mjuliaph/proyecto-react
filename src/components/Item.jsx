@@ -4,7 +4,7 @@ import sillon from "./../media/sillon.png";
 
 function Item({id, fila, numero, description, price}) {
   return (
-    <div className="card" style={{ width: "5rem", fontSize: "1rem" }}>
+    <div className="card" style={{ width: "5rem" }}>
       <img src={sillon} className="card-img-top" alt="butaca" style={{ width: "50px", height:"50px" }}/>
       <div className="card-body">
         <h4 className="card-title">{fila}{numero}</h4>

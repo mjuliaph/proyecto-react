@@ -19,7 +19,10 @@ function App() {
       </Route>
       <Route exact path="/item/:id">
         <ItemDetailContainer />
-      </Route>
+        </Route>
+        <Route exact path = "/category/:category">
+          <ItemListContainer/>
+        </Route>
     </Switch>
     <Footer/>
   </BrowserRouter>

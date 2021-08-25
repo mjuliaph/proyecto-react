@@ -1,6 +1,7 @@
 import "./../style/index.css";
 import CartWidget from "./CartWidget";
 import logo from "./../media/logo.png";
+import {Link} from "react-router-dom";
 
 function NavBar() {
   return (
@@ -22,27 +23,12 @@ function NavBar() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarColor02">
-            <ul className="navbar-nav me-auto w-100 d-flex justify-content-around">
-              <li className="nav-item">
-                <a className="nav-link" href="./">
-                  Teatro
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="./">
-                  Ballet
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="./">
-                  Opera
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="./">
-                  Conciertos
-                </a>
-              </li>
+          <ul className="estiloMenu">
+               <li><Link to ="/">HOME</Link></li>
+               <li><Link to ="/category/teatro">TEATRO</Link></li>
+               <li><Link to = "/category/ballet">BALLET</Link></li>
+              <li><Link to="/category/opera">OPERA</Link></li>
+              <li><Link to = "/category/concierto">CONCIERTO</Link></li>
             </ul>
           </div>
         </div>
