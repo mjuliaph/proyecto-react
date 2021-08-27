@@ -2,6 +2,7 @@ import ItemDetail from './ItemDetail';
 import { butacas } from "./ProductsJson";
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function ItemDetailContainer() {
@@ -25,7 +26,12 @@ function ItemDetailContainer() {
 
   // console.log("product", product);
 
-  return <ItemDetail {...product} />;
+  return (
+    <>
+      <ItemDetail {...product} />
+      <Link className="botonVolver" to="/">Volver atrás</Link>
+    </>
+  )
 }
 
 export default ItemDetailContainer;

@@ -1,3 +1,7 @@
+.estiloNavBar {
+  height: 100%;
+}
+
 .navbar {
   height: 75px;
   background-color: var(--colorBordo2) !important;
@@ -5,4 +9,22 @@
 
 .navbar-brand img {
   width: 150px;
+}
+
+.estiloMenu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.estiloMenu li {
+  list-style: none;
+  font-size: 1rem;
+}
+
+.estiloMenu li a {
+  color: var(--colorDorado);
 }

@@ -5,27 +5,29 @@ import Footer from "./components/Footer.jsx";
 import ItemListContainer from "./components/ItemListContainer.jsx";
 import ItemDetailContainer from "./components/ItemDetailContainer.jsx";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { cartContext } from "./context/cartContext";
 
 // Esto es lo que se muestra en el navegador
 function App() {
   return (
-
-  <BrowserRouter>
-    <NavBar />
-    <Main/>
-    <Switch>
-      <Route exact path="/">
-        <ItemListContainer />
-      </Route>
-      <Route exact path="/item/:id">
-        <ItemDetailContainer />
+  <cartContext.Provider value={[]}>
+    <BrowserRouter>
+      <NavBar />
+      <Main/>
+      <Switch>
+        <Route exact path="/">
+          <ItemListContainer />
         </Route>
-        <Route exact path = "/category/:category">
-          <ItemListContainer/>
-        </Route>
-    </Switch>
-    <Footer/>
-  </BrowserRouter>
+        <Route exact path="/item/:id">
+          <ItemDetailContainer />
+          </Route>
+          <Route exact path = "/category/:category">
+            <ItemListContainer/>
+          </Route>
+      </Switch>
+      <Footer/>
+    </BrowserRouter>
+  </cartContext.Provider>   
   );
 }
 

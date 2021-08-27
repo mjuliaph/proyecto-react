@@ -1,20 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./../style/index.css";
 
-function ItemCount({ stock, initial }) {
-  const [count, setCount] = useState(parseInt(initial));
-  // const [stock, setStock] = useState(props.stock);
+function ItemCount(props) {
+  const [count, setCount] = useState(parseInt(props.initial));
+  const [stockProd, setStockProd] = useState(parseInt(props.stock));
+  const onAdd = () =>{}
 
   function sumar() {
-    if (count < 5) {
+    if (count < stockProd) {
       setCount(count + 1);
+      setStockProd(stockProd - 1);
     }
   }
   function restar() {
     if (count > 0) {
       setCount(count - 1);
+      setStockProd(stockProd + 1);
     }
   }
+
+  useEffect(()=>{
+    onAdd(count);
+}, [count]);
 
   return (
     <div className="botoneraCompra">
@@ -22,8 +29,9 @@ function ItemCount({ stock, initial }) {
       <div className="botonesCompra">
         <button onClick={() => sumar()}>Agregar</button>
         <button onClick={() => restar()}>Restar</button>
+        <button onClick={() => props.onClick(count)}>AGREGAR</button>
       </div>
-      <p>Vas a comprar {count} entradas</p>
+      <p>Estás por comprar {count} entradas</p>
     </div>
   );
 }

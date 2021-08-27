@@ -1,7 +1,7 @@
 .botoneraCompra {
   height: 100%;
   text-align: center;
-  color: white;
+  color: black;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -9,10 +9,12 @@
 
 .botoneraCompra h4 {
   font-size: 1rem;
-  color: white;
+  color: black;
 }
 .botoneraCompra p {
+  margin-bottom: 2em;
   font-size: 1rem;
+  color: black;
 }
 
 .botonesCompra {
