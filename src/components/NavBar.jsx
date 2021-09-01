@@ -25,10 +25,10 @@ function NavBar() {
           <div className="collapse navbar-collapse" id="navbarColor02">
           <ul className="estiloMenu">
                <li><Link to ="/">HOME</Link></li>
-               <li><Link to ="/category/teatro">TEATRO</Link></li>
-               <li><Link to = "/category/ballet">BALLET</Link></li>
-              <li><Link to="/category/opera">OPERA</Link></li>
-              <li><Link to = "/category/concierto">CONCIERTO</Link></li>
+               <li><Link to ="/category/primera fila">TEATRO</Link></li>
+               <li><Link to = "/category/segunda fila">BALLET</Link></li>
+              <li><Link to="/category/tercera fila">OPERA</Link></li>
+              <li><Link to = "/category/cuarta fila">CONCIERTO</Link></li>
             </ul>
           </div>
         </div>

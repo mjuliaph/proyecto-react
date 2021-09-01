@@ -8,12 +8,15 @@ import { Link } from "react-router-dom";
 function ItemDetailContainer() {
   const [product, setProduct] = useState([]);
 
-  const {id} = useParams();
+  const {category} = useParams();
 
   useEffect(() => {
     new Promise((resolve, reject) => {
-      
-      setTimeout(() => resolve(butacas.filter((item) => item.id === id)), 3000);
+      if (category !== undefined) {
+        setTimeout(() => resolve(butacas.filter((item) => item.category === category)), 3000);
+      } else {
+          setTimeout(() => resolve(butacas), 2000);        
+      }
     })
       .then((data) => {
         console.log("data", data);
@@ -22,7 +25,7 @@ function ItemDetailContainer() {
       .catch((error) => {
         console.log("err", error);
       });
-  }, []);
+  }, [category]);
 
   // console.log("product", product);
 
