@@ -1,6 +1,5 @@
 import "./../style/index.css";
 import CartWidget from "./CartWidget";
-import logo from "./../media/logo.png";
 import {Link} from "react-router-dom";
 
 function NavBar() {
@@ -9,7 +8,6 @@ function NavBar() {
       <nav className="navbar navbar-expand-lg navbar-dark">
         <div className="container-fluid">
           <a className="navbar-brand" href="./../../public/index.html">
-            <img src={logo} alt="logo teatro" />
           </a>
           <button
             className="navbar-toggler"

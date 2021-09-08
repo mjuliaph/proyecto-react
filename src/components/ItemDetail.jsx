@@ -19,14 +19,14 @@ function ItemDetail ({id, fila, numero, price, description}){
 
     return(
         <>
-        <div>
+        <div className="boxDetail">
             <h1>{description}</h1>
             <h2>{fila}{numero}</h2>
             <p>{id}</p>
             <div>{price}</div>
                 {
                     finalizar ? (
-                        <Link className="botonFinalizar" to="/cart">Compra Realizada</Link>
+                        <Link className="botonFinalizar" to="/cart">Compra Realizada - Volver</Link>
                     ) : (
                         <ItemCount initial="1" stock="40" onClick={(cant) => onAdd(cant)} />                    
                     )

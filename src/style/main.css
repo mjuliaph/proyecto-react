@@ -5,28 +5,3 @@
 .portadas {
   height: 100vh;
 }
-
-.portadaTeatro {
-  width: 25%;
-  background-image: url(./../media/teatro.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.portadaBallet {
-  width: 25%;
-  background-image: url(./../media/ballet.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.portadaOpera {
-  width: 25%;
-  background-image: url(./../media/opera.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.portadaConcierto {
-  width: 25%;
-  background-image: url(./../media/concierto.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
