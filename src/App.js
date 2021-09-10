@@ -6,13 +6,15 @@ import ItemListContainer from "./components/ItemListContainer.jsx";
 import ItemDetailContainer from "./components/ItemDetailContainer.jsx";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { cartContext } from "./context/cartContext";
+import CardContainer from "./components/CardContainer";
 
 // Esto es lo que se muestra en el navegador
 function App() {
   return (
   <cartContext.Provider value={[]}>
     <BrowserRouter>
-      <NavBar />
+        <NavBar />
+        <CardContainer/>
       <Main/>
       <Switch>
         <Route exact path="/">

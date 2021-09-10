@@ -1,9 +1,9 @@
 import Item from "./Item";
 
-function ItemList({ butacas }) {
+function ItemList({ products }) {
   return (
     <>
-      {butacas.map((item) => (
+      {products.map((item) => (
         <Item {...item} />
       ))}
     </>

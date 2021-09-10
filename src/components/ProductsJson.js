@@ -1,4 +1,4 @@
-export const butacas =
+export const products =
     [
         {
         id: "01",

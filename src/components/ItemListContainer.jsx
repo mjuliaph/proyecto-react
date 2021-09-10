@@ -1,20 +1,20 @@
 import {useEffect, useState} from 'react';
 import ItemList from './ItemList';
-import { butacas } from "./ProductsJson";
+import { products } from "./ProductsJson";
 
 
 function ItemListContainer() {
-    const [products, setProducts] = useState([]);
+    const [product, setProduct] = useState([]);
 
     useEffect(()=> {
         new Promise ((resolve, reject) => {
             setTimeout(() => {
-            resolve(butacas)
+            resolve(products)
             },2000);
         })
         .then(dataResolve => {
             console.log("data Resolve" + dataResolve);
-            setProducts(dataResolve);
+            setProduct(dataResolve);
             console.log("dataResolve " + dataResolve)
         })
         .catch(error => {
@@ -25,7 +25,7 @@ function ItemListContainer() {
     return (
         <>
             <div className="itemListContainer">
-                <ItemList butacas={products} />
+                <ItemList products={product} />
             </div>
         </>
     )

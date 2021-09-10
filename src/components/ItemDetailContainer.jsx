@@ -1,5 +1,5 @@
 import ItemDetail from './ItemDetail';
-import { butacas } from "./ProductsJson";
+import { products } from "./ProductsJson";
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -13,9 +13,9 @@ function ItemDetailContainer() {
   useEffect(() => {
     new Promise((resolve, reject) => {
       if (category !== undefined) {
-        setTimeout(() => resolve(butacas.filter((item) => item.category === category)), 3000);
+        setTimeout(() => resolve(products.filter((item) => item.category === category)), 3000);
       } else {
-          setTimeout(() => resolve(butacas), 2000);        
+          setTimeout(() => resolve(products), 2000);        
       }
     })
       .then((data) => {
