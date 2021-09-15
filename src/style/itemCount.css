@@ -4,26 +4,27 @@
   color: black;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: center;
 }
 
-.botoneraCompra h4 {
+/* .botoneraCompra h4 {
   font-size: 1rem;
   color: black;
-}
-.botoneraCompra p {
+} */
+/* .botoneraCompra p {
   margin-bottom: 2em;
   font-size: 1rem;
   color: black;
-}
+} */
 
 .botonesCompra {
+  font-size: 0.75rem;
   width: 100%;
-  margin: 1em 0;
   padding: 1em;
+  margin-right: 4em;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .botonesCompra button {

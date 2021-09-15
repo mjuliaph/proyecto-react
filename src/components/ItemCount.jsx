@@ -25,13 +25,12 @@ function ItemCount(props) {
 
   return (
     <div className="botoneraCompra">
-      <h4>Cuantas entradas deseas? </h4>
+      {/* <h4>Cuantas entradas deseas? </h4> */}
       <div className="botonesCompra">
         <button onClick={() => sumar()}>Agregar</button>
-        <button onClick={() => restar()}>Restar</button>
-        <button onClick={() => props.onClick(count)}>AGREGAR</button>
+        <button onClick={() => restar()}>Sacar</button>
+        {/* <button onClick={() => props.onClick(count)}>AGREGAR</button> */}
       </div>
-      <p>Estás por comprar {count} entradas</p>
     </div>
   );
 }

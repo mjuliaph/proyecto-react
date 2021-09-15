@@ -5,3 +5,19 @@
 .portadas {
   height: 100vh;
 }
+
+.cardContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.card {
+  margin: 1em;
+  border: 2px solid var(--colorBordo2);
+  border-radius: 5px;
+  margin: 3rem;
+  display: flex;
+  align-items: center;
+}

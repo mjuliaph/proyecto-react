@@ -22,11 +22,11 @@ function CardContainer () {
         )
     }
     return (
-        <>
+        <div className="cardContainer">
             {products.map((datos) => (
                 <Card {...datos}/>
             ))}
-        </>
+        </div>
     )
 }
 
