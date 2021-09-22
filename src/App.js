@@ -5,16 +5,22 @@ import Footer from "./components/Footer.jsx";
 import ItemListContainer from "./components/ItemListContainer.jsx";
 import ItemDetailContainer from "./components/ItemDetailContainer.jsx";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { cartContext } from "./context/cartContext";
-import CardContainer from "./components/CardContainer";
+// import CardContainer from "./components/CardContainer";
+import { CartProvider } from "./context/CartContext.jsx";
+import Cart from "./components/Cart.jsx";
+
+// //Firebase
+// import { collection, getDocs } from 'firebase/firestore';
+// import { getData } from './firebase';
 
 // Esto es lo que se muestra en el navegador
 function App() {
   return (
-  <cartContext.Provider value={[]}>
-    <BrowserRouter>
-        <NavBar />
-        <CardContainer/>
+  <CartProvider>
+      <BrowserRouter>
+        <header>
+          <NavBar />
+        </header>
       <Main/>
       <Switch>
         <Route exact path="/">
@@ -26,10 +32,15 @@ function App() {
           <Route exact path = "/category/:category">
             <ItemListContainer/>
           </Route>
-      </Switch>
+          <Route exact path="/cart">
+            <section>
+              <Cart />
+            </section>
+          </Route>
+        </Switch>
       <Footer/>
     </BrowserRouter>
-  </cartContext.Provider>   
+  </CartProvider>   
   );
 }
 

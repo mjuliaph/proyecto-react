@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./../style/index.css";
 
 function ItemCount(props) {
@@ -25,12 +25,12 @@ function ItemCount(props) {
 
   return (
     <div className="botoneraCompra">
-      {/* <h4>Cuantas entradas deseas? </h4> */}
       <div className="botonesCompra">
         <button onClick={() => sumar()}>Agregar</button>
         <button onClick={() => restar()}>Sacar</button>
-        {/* <button onClick={() => props.onClick(count)}>AGREGAR</button> */}
       </div>
+      <h6>Cantidad seleccionada: {count}</h6>
+      {count > 0 && <button onClick={() => onAdd(count)}>Agregar al Carrito</button>}
     </div>
   );
 }
