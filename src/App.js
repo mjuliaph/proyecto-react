@@ -5,7 +5,6 @@ import Footer from "./components/Footer.jsx";
 import ItemListContainer from "./components/ItemListContainer.jsx";
 import ItemDetailContainer from "./components/ItemDetailContainer.jsx";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-// import CardContainer from "./components/CardContainer";
 import { CartProvider } from "./context/CartContext.jsx";
 import Cart from "./components/Cart.jsx";
 
