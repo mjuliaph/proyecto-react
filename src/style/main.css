@@ -2,8 +2,12 @@
   width: 24.7vw;
 } */
 
-.portadas {
-  height: 100vh;
+.indexGeneral {
+  background-image: url("../media/fondoIndex.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .cardContainer {
@@ -15,9 +19,63 @@
 
 .card {
   margin: 1em;
-  border: 2px solid var(--colorBordo2);
+  border: 2px solid var(--colorVioleta) !important;
   border-radius: 5px;
   margin: 3rem;
   display: flex;
   align-items: center;
+}
+
+.botonDetalle {
+  margin: 0.5em 0;
+  padding: 0.5em;
+  background-color: white;
+  border: 1px solid var(--colorVioleta);
+  border-radius: 5px;
+}
+.botonDetalle a {
+  text-decoration: none;
+}
+
+/* ESTILOS DE LAS CARD EN DETALLE */
+
+.detalleCard {
+  display: flex;
+  justify-content: center;
+}
+
+.botonesStock button {
+  margin: 1em;
+  padding: 0.5em;
+  border: 1px solid var(--colorVioleta);
+  background-color: white;
+  color: var(--colorVioleta);
+  border-radius: 5px;
+}
+
+.botonesStock button:hover {
+  border: 1px solid white;
+  background-color: var(--colorVioleta);
+  color: white;
+}
+
+.btn-outline-success .agregar {
+  margin: 1em 0;
+  border-radius: 5px;
+}
+
+.card-header {
+  text-align: center;
+  background-color: white;
+}
+
+.card-img-top:hover {
+  opacity: 80%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.contenedoresCategorias {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
 }

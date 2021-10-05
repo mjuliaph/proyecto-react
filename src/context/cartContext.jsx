@@ -2,24 +2,22 @@ import { createContext, useState, useEffect } from "react";
 import { collection, doc, setDoc, Timestamp } from "firebase/firestore";
 import { getData } from "../firebase";
 
-
 // creo el contexto y lo exporto, lo inicio como array vacio xq no hay nada en el carrito.
 export const CartContext = createContext([]);
 
 
-// //creo mi estado global que se usara en APP
-export const CartProvider = ({ children }) => {
+//creo mi estado global que se usara en APP
+export const CartProvider = ( {children} ) => {
 
-    const [myCart, setMyCart] = useState([]);
+    const [ cart, setCart] = useState([]);
     const [cartLength, setCartLength] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
-  
+
     const [user, setUser] = useState({
         name: "",
         email: "",
         phone: "",
-    });
-    
+    }); 
 
     const tomarDatos = (e) => {
         setUser({
@@ -34,26 +32,26 @@ export const CartProvider = ({ children }) => {
 
 
     const finalizarCompra = async () => {
-        console.log("Fin de la compra");
+        console.log("Fin de compra");
         const orderCollection = doc(collection(getData(), 'orders'));
         const order = {
             buyer: user,
-            items: myCart,
+            items: cart,
             date: Timestamp.fromDate(new Date()),
             total: totalPrice
         };
+        
+        
         await setDoc(orderCollection, order)
+        
     }
 
     //función para adherir un item al carrito
     const addItem = (item, cantidad) => {
-        // inicializo newCart y lo utilizo en esta función para no mutar myCart
-        let newCart = myCart
+        let newCart = cart
 
-        // saco la cuenta del precio total que se quiere agregar 
         const sumPrice = {...item}.price * cantidad;
 
-        // genero mi objeto newItem para agregarlo
         let newItem = { id: item.id, name: item.name, img: item.img, price: sumPrice, quantity: cantidad }
 
         if (isInCart({...item}.id)){
@@ -66,52 +64,56 @@ export const CartProvider = ({ children }) => {
             // lo agrego de nuevo en la misma posición que estaba para que al usuario no se le modifique la posición y lo vea extraño
             newCart.splice(idx, 0, newItem);
 
-            // actualizo MyCart
-            setMyCart(newCart)
+            // actualizo cart
+            setCart(newCart)
+
         } else {
-            // si el Producto no está en el carrito, actualizo MyCart directamente
+            // si el Producto no está en el carrito, actualizo cart directamente
             newCart = [...newCart, newItem];
-            setMyCart(newCart)
+            setCart(newCart)
         }
     }
+
+    // funcion para ver si está en el carrito
     const isInCart = (id) => {
-        const search = myCart.filter((item) => item.id === id);
-        return search.length > 0;
-    };
-
-    const removeItem = (producto) =>{
-        const myNewCart = myCart.filter(( e ) => e.id !== producto);
-        setMyCart(myNewCart)
-    }
-
+        const check = cart.filter((item) => item.id === id);
+        return check.length > 0;
+        };
+    
+    //funcion para eliminar un elemento
+    const removeItem = (producto) => {
+        const newCart = cart.filter((item) => item.id !== producto);
+        setCart(newCart);
+        };
+        
+    //funcion para vaciar el carrito
     const vaciarCarrito = () => {
-        setMyCart([])
-    };
+            setCart([])
+        };
 
     useEffect (() => {
-        let inCart = 0;
-        console.log(myCart)
-        for (let i of myCart) {
-            inCart += i.quantity
-        }
+        let inCart = 0
+        
+        for (let i of cart) {
+            inCart += i.quantity 
+        } 
         return setCartLength(inCart)
-        } , [myCart]);
+        } , [cart]);
 
     useEffect (() => {
         let cartPrice = 0;
-
-        for (let i of myCart) {
-            cartPrice += i.price
-        }
-        return setTotalPrice(cartPrice)
-    }, [myCart]);
     
+        for (let i of cart) {
+            cartPrice += i.price 
+        } 
+        return setTotalPrice(cartPrice)
+        } , [cart]);
+
 
     return (
-        <CartContext.Provider value={{ myCart, setMyCart, addItem, isInCart, cartLength, setCartLength, removeItem, vaciarCarrito, totalPrice, setTotalPrice, finalizarCompra, tomarDatos, submitBotton }}>
-            {children}
+        <CartContext.Provider value={{cart, setCart, addItem, removeItem, vaciarCarrito, totalPrice, setTotalPrice, cartLength, setCartLength, finalizarCompra, tomarDatos, submitBotton}}>
+            { children }
         </CartContext.Provider>
-    );
-};
+    )
 
-export default CartContext;
+}

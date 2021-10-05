@@ -1,16 +1,18 @@
-import "../style/index.css"
+import "../style/index.css";
 
 function Footer() {
     return(
         <div className="piePagina">
             <div>
-                <p>Contacto</p>
+                <p>Buenos Aires - Argentina</p>
             </div>
             <div>
                 © Copyrigth Julia Pedraza - 2021
             </div>
-            <div>
-                <p>Redes Sociales</p>
+            <div className="redesSociales">
+                <i className="fab fa-facebook-square"></i>
+                <i className="fab fa-instagram"></i>
+                <i className="fab fa-twitter-square"></i>                
             </div>
         </div>
     )

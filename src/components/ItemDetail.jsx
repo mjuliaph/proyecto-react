@@ -1,53 +1,52 @@
 import ItemCount from "./ItemCount";
-import { useEffect, useState, useContext } from "react";
+import "./../style/index.css";
+import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../context/CartContext.jsx";
+import { CartContext } from "../context/CartContext";
 
-function ItemDetail (props){
 
-    const {myCart, addItem} = useContext(CartContext);
-    const [finalizarCompra, setFinalizarCompra] = useState(false);
+ function ItemDetail(props) {
+
+    const { cart, addItem } = useContext(CartContext); 
+    const [ cantidadCompra, setCantidadCompra ] = useState();
+    const [ terminarCompra, setTerminarCompra] = useState(false);
     const [ newInitial, setNewInitial ] = useState(props.initial);
 
 
-    // INTENTO HACER QUE:
-    // SI EL PRODUCTO YA ESTÁ EN EL CARRITO, SE MUESTRE EL NÚMERO DE ESTE PRODUCTO QUE ESTÁ EN EL CARRITO COMO INITIAL
-    // PERO ENTIENDO QUE SE LO PASA POR PROPS A itemCount Y LUEGO HACE EL useEffect (trabajando...)
-
     useEffect(() => {
-        const checkCart = myCart.findIndex( (obj) => obj.id === props.id );
+        const checkCart = cart.findIndex ((obj) => obj.id === props.id );
         if (checkCart >= 0) {
-            const actualInitial = myCart[checkCart].quantity
+            const actualInitial = cart[checkCart].quantity
             setNewInitial(actualInitial);
-            console.log(`myCart al cargar con initial es: ${actualInitial}`, myCart);
+            
         }
-    }, [myCart, props.id, props.initial, props.stock]);
+    }, [cart, props.id, props.initial, props.stock]);
 
 
-    const addCart = (cantidadItems) => {
-        setFinalizarCompra(!finalizarCompra);
-        addItem(props, cantidadItems)
+    const agregarAlCarrito = (cantProducto) => {
+        setTerminarCompra(!terminarCompra)
+        addItem (props, cantProducto)
     }
-    console.log(myCart);
+    
+     return (
+        <div>
+            <h1 style={{marginTop:"2em", marginBottom:"1em", textAlign:"center", color:"var(--colorVioleta)", textShadow: "1px 1px 1px #000, 3px 3px 5px #fff"}}>Detalle del producto:</h1>
+            <div className="detalleCard">
+                <div className="card"style={{width: "18rem"}}>
+                <img src={props.image} className="card-img-top" alt="articulo" style={{ width: "200px", height:"200px" }}/>
+                <h2 className="card-title" style={{textAlign: "center"}}>{props.name}</h2>
+                <p className="card-title">{props.description}</p>
+                <h4 className="card-title">Precio: ${props.price}</h4>
+                {terminarCompra ? (
+                    <Link to = "/cart" className="btn btn-success" style={{margin:"0.5em", borderRadius:"5px"}}>IR AL CARRITO</Link>
+                    ) : (
+                    <ItemCount valorInicial= {props.initial} stock= {props.stock} onClick={(cantidad)=>agregarAlCarrito(cantidad)}/>
+                )}
+                </div>
+            </div>              
+        </div>
+        )};                     
 
 
-    return(
-        <>
-            <div className="">
-                <h1>{props.description}</h1>
-                <p>{props.price}</p>
-                    {
-                        finalizarCompra ? (
-                            <Link className="botonFinalizar" to="/cart">Ir al Carrito</Link>
-                        ) : (
-                            <ItemCount valorInicial={props.initial} stock={props.stock} onAdd={ (cant) => addCart(cant)}/>
-                            // <ItemCount valorInicial= {props.initial} stock= {props.stock} onClick={(cantidad)=>agregarAlCarrito(cantidad)}/>
-                        )
-                    }
-            </div>
-        </>
-    );
-}
 
 export default ItemDetail;
-

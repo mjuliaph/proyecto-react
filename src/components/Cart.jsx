@@ -1,41 +1,47 @@
 import { useContext } from "react";
-import { CartContext } from "../context/CartContext.jsx";
+import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
+import "./../style/index.css";
 
-function Cart() {
-
-    const { myCart, removeItem, itemsInCart, vaciarCarrito, totalPrice } = useContext(CartContext);
-    
-    console.log(myCart);
+function Cart () {
+    const { cart, removeItem, cartLength, vaciarCarrito, totalPrice } = useContext(CartContext);
 
     return (
-        itemsInCart <= 0 ? 
-        (<div>
-           <h1 className= "">Bienvenido a tu carrito!</h1>
-           <div>
-                <h2 className= "">Oh, no.. Tu carrito esta vacío!</h2>
+        cartLength <= 0 ? 
+        (<div className= "container cartPrincipal">
+            <h1>Bienvenido a tu carrito!</h1>
+            <div>
+                <h2 style={{margin:"4em"}}>Oh, no.. Tu carrito esta vacío!</h2>
                 <Link to="/">
-                    <button className="" style={{marginTop:"4rem", fontSize:"1.5rem", backgroundColor:"#c5a2b3"}}>¡Volvamos para atrás!</button>
+                    <button className="btn btn-warning btnVacio" >¡Volvé y empezá a comprar!</button>
                 </Link>
             </div>
         </div>
         ):(
-        <div>
+        <div className= "container cartPrincipal">
             <div>
-                <h1 className= "">Bienvenido a tu carrito!</h1>
+                <h1>Bienvenido a tu carrito!</h1>
+                <h2 style={{textAlign:"start"}}>Este es el detalle:</h2>
+            </div>
+            <div className= "container-fluid">
+                <div className = "row">
+                    <h3 className= "col-md-4">Producto</h3>
+                    <h3 className= "col-md-3">Cantidad</h3>
+                    <h3 className="col-md-3">Precio</h3>
+                    <h3 className="col-md-2">Operación</h3>
+                </div>
             </div>
 
-            {myCart.map((item) => {
+            { cart.map((item) => {
                     return (
                     <div className= "container-fluid">
                         <div className= "row estiloTituloDos" key={item.id}>
-                            <div className= "col-md-2 estiloItemsDos"><img style= {{ maxWidth: "100%", maxHeight: "50px"}} src={item.img} alt={item.name}/></div>
-                            <div className= "col-md-4 estiloItemsDos">{item.name}</div>
-                            <div className= "col-md-2 estiloItemsDos">{item.quantity}</div>     
-                            <div className= "col-md-2 estiloItemsDos">$ {item.price}</div>
-                            <div className= "col-md-1 estiloItemsDos">
-                                <Link to={`/item/${ item.id }`}><button className="iconos"><i style={{color: "rgb(14 197 37)"}} className="fas fa-pencil"></i></button></Link>
-                                <button className="iconos" onClick={()=>removeItem(item.id)}><i style={{color: "rgb(224, 24, 24, 1)"}} className="fas fa-trash"></i></button>
+                            <div className= "col-md-4 itemList">{item.name}</div>
+                            <div className= "col-md-3 itemList">{item.quantity}</div>     
+                            <div className= "col-md-3 itemList">$ {item.price}</div>
+                            <div className= "col-md-2 itemList">
+                                <Link to={`/item/${ item.id }`}><button style={{marginRight:"0.75em", borderRadius:"90%", backgroundColor:"white"}}><i className="fas fa-pen-nib" style={{color:"green"}}></i></button></Link>
+                                <button style={{borderRadius:"90%", backgroundColor:"white"}} onClick={()=>removeItem(item.id)}><i className="far fa-trash-alt" style={{color:"red"}}></i></button>
                             </div>
                         </div>
                     </div>
@@ -43,15 +49,15 @@ function Cart() {
                 })
             }
             <div>
-                <h3 style={{backgroundColor: "#ffffff8f", textAlign:"center", fontSize:"2rem", fontWeight:"700"}}>Total de su compra: ${totalPrice}</h3>
+                <h3 className="tituloCompra" style={{textAlign:"start", margin:"2em 0", fontSize:"1.5rem"}}>Total de tu compra: ${totalPrice}</h3>
                 <div className="acomodarBoton">
-                    <button onClick={ ()=> vaciarCarrito() } className="emptyButton iconos" style= {{color:"white", width:"10rem", fontSize:"1.2rem", textAlign:"center"}}>Vaciar  <i style={{color: "rgb(224, 24, 24, 1)", padding:"5px"}} className="fas fa-trash"> </i></button>
-                    <Link to="/" ><button  className="emptyButton iconos" style= {{color:"white", width:"10rem", fontSize:"1.2rem", textAlign:"center"}}>Seguir Comprando  <i style={{color: "rgb(34, 41, 253, 1)", padding:"5px"}} className="fas fa-hand-point-left"> </i></button></Link>
-                    <Link to= "/CartForm"><button className="emptyButton iconos" style= {{color:"white", width:"10rem", fontSize:"1.2rem", textAlign:"center"}}>Finalizar Compra  <i style={{color: "rgb(14, 197, 37)", padding:"5px"}} className="fas fa-check-square"></i></button></Link>
+                    <button onClick={ ()=> vaciarCarrito() } className="btn btn-outline-danger">Vaciar Carrito</button>
+                    <Link to="/" ><button  className="btn btn-outline-warning" >Seguir Comprando</button></Link>
+                    <Link to= "/cartForm"><button className="btn btn-outline-success">Finalizar Compra</button></Link>
                 </div>
             </div>
         </div>
     ))
 }
-
 export default Cart;
+

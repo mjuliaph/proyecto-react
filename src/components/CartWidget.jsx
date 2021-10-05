@@ -1,22 +1,19 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { CartContext } from "../context/CartContext.jsx";
+import { CartContext } from "../context/CartContext";
 import "../style/index.css";
 
-// funcion para el icono del carrito de compras
-function CartWidget() {
+function CartWidget () {
 
-    const { itemsInCart } = useContext(CartContext); 
-
-    console.log(itemsInCart)
-
+    const { cartLength } = useContext(CartContext); 
+    
     return (
-    <Link to="/cart" className="" >
+    <Link to="/cart">
         <i className="fas fa-shopping-cart"></i>
-        { {itemsInCart} === 0 ? (
+        { {cartLength} === 0 ? (
                 ""
             ) : (
-                <span>{ itemsInCart }</span>
+                <span className="badge rounded-pill bg-info" style={{color:"white", fontSize:".75rem", marginLeft:"-3em"}}>{ cartLength }</span>
             )}
     </Link>
     )

@@ -1,9 +1,17 @@
 .piePagina {
-  height: 50px;
-  background-color: var(--colorBordo2);
+  margin-top: 2em;
+  height: 60px;
+  background-color: var(--colorVioleta);
   color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 15px;
+}
+
+.redesSociales {
+  width: 10%;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-around;
 }

@@ -1,41 +1,34 @@
-import React, { useState } from "react"; //, useEffect
+import React, { useState } from "react";
 import "./../style/index.css";
 
-function ItemCount(props) {
-  const [count, setCount] = useState(parseInt(props.valorInicial));
-  const [stockItems, setstockItems] = useState(parseInt(props.stock));
-  // const onAdd = () =>{}
+function ItemCount (props) {
+    
+    const [count, setCount] = useState(parseInt(props.valorInicial));
+    const [stock, setStock] = useState(parseInt(props.stock));
+    
 
-  function sumarItems() {
-    if (count < stockItems) {
-      setCount(count + 1);
-      setstockItems(stockItems - 1);
+    function sumarItems () {
+        if (count < stock) {
+            setCount(count + 1)
+        }
+    }                  
+
+    function restarItems () {
+        if (count > 0) {
+            setCount(count - 1)
+        }
     }
-    console.log(sumarItems);
-  }
-  function restarItems() {
-    if (count > 0) {
-      setCount(count - 1);
-      setstockItems(stockItems + 1);
-    }
-    console.log(restarItems);
-  }
 
-//   useEffect(()=>{
-//     onAdd(count);
-// }, [count]);
-
-  return (
-    <div className="botoneraCompra">
-      <div className="botonesCompra">
-        <button onClick={() => sumarItems()}>Agregar</button>
-        <button onClick={() => restarItems()}>Sacar</button>
-      </div>
-      {/* <button className="boton" onClick={()=>props.onAdd(count)} >AGREGAR</button> */}
-
-      <button className="boton" onAdd={()=>props.onAdd(count)} >AGREGAR</button>
-    </div>
-  );
-}
+    return (
+        <>
+        <h5>CANTIDAD: {count}</h5>
+        <div className="botonesStock">
+            <button onClick = {()=> restarItems()}> Restar </button>
+            <button onClick = {()=>sumarItems()}> Sumar </button>
+        </div>
+        <button className="btn btn-outline-success agregar" onClick={()=>props.onClick(count)} >AGREGAR</button>
+        </>
+    )
+};
 
 export default ItemCount;

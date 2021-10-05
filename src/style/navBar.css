@@ -4,7 +4,7 @@
 
 .navbar {
   height: 75px;
-  background-color: var(--colorBordo2) !important;
+  background-color: var(--colorVioleta) !important;
 }
 
 .navbar-brand img {
@@ -26,5 +26,101 @@
 }
 
 .estiloMenu li a {
-  color: var(--colorDorado);
+  color: white;
+}
+
+.estiloMenu li a:hover {
+  text-decoration-style: wavy;
+  color: white;
+  text-decoration-thickness: 10%;
+}
+
+.dropdown-menu {
+  background-color: var(--colorVioleta);
+}
+.dropdown-menu li:hover {
+  background-color: gray;
+  text-decoration-style: none;
+}
+
+/* ICONO DEL CARRITO */
+
+.fa-shopping-cart {
+  margin-right: 1em;
+  color: white;
+  font-size: 35px;
+}
+
+/* PAGINA DEL CARRITO */
+
+.cartPrincipal {
+  padding: 3em;
+  height: 100vh;
+  margin-top: 5em;
+  margin-bottom: 4em;
+  background-color: rgba(160, 20, 79, 0.6);
+  opacity: 75%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.cartPrincipal h1 {
+  padding-top: 1.5em;
+  text-align: center;
+  color: white;
+}
+
+.cartPrincipal h2 {
+  padding-top: 1.5em;
+  padding-bottom: 1em;
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: darkgray;
+}
+
+.cartPrincipal h3 {
+  text-align: center;
+  padding-top: 1.5em;
+  padding-bottom: 1em;
+  font-size: 1rem;
+  color: white;
+  text-shadow: darkgray;
+}
+
+.cartPrincipal div {
+  text-align: center;
+  color: white;
+}
+
+.btn-outline-success {
+  width: 15em;
+  margin: 1em;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 4em;
+}
+
+.btn-outline-warning {
+  width: 15em;
+  margin: 1em;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 4em;
+}
+
+.btn-outline-danger {
+  width: 15em;
+  margin: 1em;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 4em;
+}
+.itemList {
+  margin-bottom: 1.5em;
+}
+
+.btnVacio {
+  font-size: 1.25rem;
+  border-radius: 5px;
 }
